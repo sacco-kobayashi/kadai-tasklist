@@ -6,6 +6,7 @@ class TasksController < ApplicationController
   def show
     @task = Task.find(params[:id])
   end
+  
   def new
     @task = Task.new
   end
@@ -43,7 +44,7 @@ class TasksController < ApplicationController
     @task.destroy
 
     flash[:success] = 'Task は正常に削除されました'
-    redirect_to task_url
+    redirect_to tasks_url
   end
 
   private
